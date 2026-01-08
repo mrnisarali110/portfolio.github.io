@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nisar | Software Eng.</title>
     <link rel="canonical" href="https://mrnisarali110.github.io/Portfolio-Resume/" />
-    <meta name="description" content="Portfolio of Nisar Ali, a Solutions Engineer and Technical Project Manager specializing in Python, n8n Automation, and Full Stack Development. View my projects and certifications.">
+    <meta name="description" content="Portfolio of Nisar Ali, a Solutions Engineer and Technical Project Manager specializing in Python, n8n Automation, and Full Stack Development.">
     <meta name="keywords" content="Nisar Ali, Solutions Engineer, Technical Project Manager, n8n Developer, Python Developer, Portfolio, Tech Minds Venture">
     <meta name="author" content="Nisar Ali">
     
@@ -15,8 +15,6 @@
     <meta property="og:image" content="https://raw.githubusercontent.com/mrnisarali110/Portfolio/main/profile.png">
     <meta property="og:url" content="https://mrnisarali110.github.io/Portfolio-Resume/">
     <meta property="og:type" content="website">
-
-    <meta name="google-site-verification" content="PASTE_YOUR_GOOGLE_CODE_HERE" />
 
     <script type="application/ld+json">
     {
@@ -270,16 +268,15 @@
             border-radius: 16px; overflow: hidden; transition: 0.4s; height: 100%; display: flex; flex-direction: column;
         }
         .project-card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .project-content { padding: 30px; flex-grow: 1; }
-        .project-content h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--text-primary); }
-        .project-content p { color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .project-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-content h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-primary); }
+        .project-content p { color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
         .tag {
             background: var(--card-hover); color: var(--accent);
             padding: 5px 12px; border-radius: 4px; font-size: 0.8rem;
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'JetBrains Mono', monospace; display: flex; align-items: center; gap: 6px;
         }
-        /* Removed .project-links styles as button is removed */
 
         /* --- CERTIFICATIONS SECTION --- */
         .cert-grid {
@@ -537,118 +534,75 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-content">
-                        <h3><i class="fas fa-gem" style="color:var(--accent)"></i> PSX Gem Finder</h3>
-                        <p>Financial analysis tool that uses AI to parse complex stock company reports. Generates visual summaries and "Gem" entry signals (Bull/Bear) based on sentiment analysis.</p>
+                        <h3><i class="fas fa-envelope-open-text" style="color:var(--accent)"></i> Smart Gmail Categorizer</h3>
+                        <p>
+                            Designed an automated email categorization system using n8n that analyzes incoming emails and dynamically routes them into labels (Sponsors, Courses) based on context.<br><br>
+                            <strong style="color:var(--text-primary)">Impact:</strong> Reduced manual sorting and enabled faster response to high-priority messages.
+                        </p>
                         <div class="tech-tags">
-                            <span class="tag">AI Analysis</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">FinTech</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="120">
-                    <div class="project-content">
-                        <h3><i class="fas fa-filter" style="color:var(--accent)"></i> Smart Gmail Categorizer</h3>
-                        <p>Intelligent automation workflow built on n8n. Auto-detects and sorts incoming emails into custom labels (Sponsors, Courses, Discounts, Others) directly in Gmail, keeping the inbox organized.</p>
-                        <div class="tech-tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">Gmail Automation</span>
-                            <span class="tag">Workflow</span>
+                            <span class="tag"><i class="fas fa-project-diagram"></i> n8n</span>
+                            <span class="tag"><i class="fab fa-google"></i> Gmail API</span>
+                            <span class="tag"><i class="fas fa-satellite-dish"></i> Webhooks</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="project-content">
-                        <h3><i class="fas fa-cloud-upload-alt" style="color:var(--accent)"></i> Automated Data Pipeline</h3>
-                        <p>Automated workflow that watches a Drive folder, filters raw data, cross-references online sources for enrichment, and generates a consolidated master summary.</p>
+                        <h3><i class="fas fa-chart-line" style="color:var(--accent)"></i> PSX Gem Finder</h3>
+                        <p>
+                            Built a Python-based analysis tool that parses complex PSX financial reports, applies AI-driven sentiment analysis, and generates simplified visual summaries and market signals.<br><br>
+                            <strong style="color:var(--text-primary)">Impact:</strong> Transformed unstructured financial data into actionable insights for investors.
+                        </p>
                         <div class="tech-tags">
-                            <span class="tag">Google Colab</span>
-                            <span class="tag">Drive API</span>
-                            <span class="tag">Automation</span>
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fas fa-brain"></i> AI Analysis</span>
+                            <span class="tag"><i class="fas fa-file-code"></i> Data Parsing</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-content">
-                        <h3><i class="fas fa-wallet" style="color:var(--accent)"></i> AI Smart Ledger</h3>
-                        <p>Personal finance tracker built with AI-assisted "Vibe Coding." Features fast expense entry via natural language and visual analytics charts.</p>
+                        <h3><i class="fas fa-network-wired" style="color:var(--accent)"></i> Automated Data Pipeline</h3>
+                        <p>
+                            Developed a fully automated serverless pipeline that extracts files from Google Drive, filters and cross-references datasets, and processes structured outputs without human intervention.<br><br>
+                            <strong style="color:var(--text-primary)">Impact:</strong> Eliminated manual data errors and significantly reduced processing time.
+                        </p>
                         <div class="tech-tags">
-                            <span class="tag">AI-Assisted</span>
-                            <span class="tag">Chart.js</span>
-                            <span class="tag">Web App</span>
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag"><i class="fab fa-google-drive"></i> G-Drive API</span>
+                            <span class="tag"><i class="fas fa-cogs"></i> Automation Scripts</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="project-content">
-                        <h3><i class="fas fa-truck-fast" style="color:var(--accent)"></i> ELMS (FYP)</h3>
-                        <p>Ecommerce Logistics Management System. A MERN stack platform integrating courier APIs for automated dispatch, order tracking, and an AI support chatbot.</p>
+                        <h3><i class="fas fa-wallet" style="color:var(--accent)"></i> Money Manager App</h3>
+                        <p>
+                            Designed a full-stack expense tracking application allowing users to log transactions via AI prompts, categorize spending, and visualize financial behavior through dynamic dashboards.<br><br>
+                            <strong style="color:var(--text-primary)">Impact:</strong> Improved financial awareness and budgeting discipline for users.
+                        </p>
                         <div class="tech-tags">
-                            <span class="tag">MERN Stack</span>
-                            <span class="tag">Courier APIs</span>
-                            <span class="tag">Chatbot</span>
+                            <span class="tag"><i class="fab fa-react"></i> React</span>
+                            <span class="tag"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="tag"><i class="fas fa-robot"></i> AI Agent</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-content">
-                        <h3><i class="fas fa-chart-line" style="color:var(--accent)"></i> AI Crypto Signal</h3>
-                        <p>Hybrid prediction model combining math-based indicators and AI algorithms to analyze crypto market trends and generate buy/sell signals.</p>
+                        <h3><i class="fas fa-shopping-bag" style="color:var(--accent)"></i> Client Web Solution</h3>
+                        <p>
+                            Delivered a responsive, conversion-focused business website tailored to client requirements, handling design customization, feature integration, and deployment.<br><br>
+                            <strong style="color:var(--text-primary)">Impact:</strong> Established reliable web presence with zero ongoing technical overhead for the client.
+                        </p>
                         <div class="tech-tags">
-                            <span class="tag">Predictive AI</span>
-                            <span class="tag">Math Models</span>
-                            <span class="tag">Crypto</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="350">
-                    <div class="project-content">
-                        <h3><i class="fab fa-whatsapp" style="color:var(--accent)"></i> n8n Order Bot</h3>
-                        <p>Automated order intake workflow. Captures WhatsApp messages via n8n, processes the order details, and syncs them instantly to Google Drive/Sheets.</p>
-                        <div class="tech-tags">
-                            <span class="tag">n8n</span>
-                            <span class="tag">WhatsApp API</span>
-                            <span class="tag">No-Code</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-content">
-                        <h3><i class="fas fa-headset" style="color:var(--accent)"></i> Omni-Channel AI</h3>
-                        <p>Intelligent customer support bot deployed across both Website and WhatsApp. Uses AI to understand context and resolve user queries autonomously.</p>
-                        <div class="tech-tags">
-                            <span class="tag">NLP</span>
-                            <span class="tag">Chatbot</span>
-                            <span class="tag">Integration</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="450">
-                    <div class="project-content">
-                        <h3><i class="fas fa-robot" style="color:var(--accent)"></i> Image Dataset Scraper</h3>
-                        <p>High-volume image scraper built with Python. Automates the collection and cleaning of image data for machine learning datasets.</p>
-                        <div class="tech-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Data Mining</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-content">
-                        <h3><i class="fas fa-utensils" style="color:var(--accent)"></i> Cafe Klay UI</h3>
-                        <p>Complete dine-in ordering prototype for a premium restaurant. Designed in Figma to streamline customer user flow.</p>
-                        <div class="tech-tags">
-                            <span class="tag">Figma</span>
-                            <span class="tag">UI/UX</span>
+                            <span class="tag"><i class="fab fa-shopify"></i> Shopify</span>
+                            <span class="tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="tag"><i class="fas fa-paint-brush"></i> UI/UX</span>
                         </div>
                     </div>
                 </div>
