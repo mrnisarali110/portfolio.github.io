@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nisar Ali |Solutions Engineer |Technical Project Manager</title>
+    <title>Nisar Ali | Solutions Engineer | Technical Project Manager</title>
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <style>
         /* --- THEME VARIABLES --- */
         :root {
-            /* DARK MODE (Default) */
+            /* DARK MODE VARIABLES (Switched logic in JS/HTML but kept var names) */
             --bg-color: #0b0f19;
             --glass-bg: rgba(30, 41, 59, 0.7);
             --glass-border: rgba(255, 255, 255, 0.08);
@@ -23,11 +23,11 @@
             --terminal-bg: #1e1e1e;
             --terminal-text: #f1f5f9;
             --card-hover: rgba(14, 165, 233, 0.1);
-            --nav-padding: 5%; /* Distance from corners */
+            --nav-padding: 5%;
         }
 
         [data-theme="light"] {
-            /* LIGHT MODE */
+            /* LIGHT MODE (Now Default) */
             --bg-color: #f8fafc;
             --glass-bg: rgba(255, 255, 255, 0.8);
             --glass-border: rgba(0, 0, 0, 0.1);
@@ -99,10 +99,10 @@
         .output-line { color: #94a3b8; display: block; }
         .success { color: #27c93f; }
 
-        /* --- NAVIGATION (GRID LAYOUT) --- */
+        /* --- NAVIGATION --- */
         nav {
             display: grid;
-            grid-template-columns: 1fr auto 1fr; /* Left, Center, Right */
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
             padding: 20px var(--nav-padding);
             position: absolute;
@@ -111,52 +111,28 @@
             z-index: 10;
         }
 
-        /* Left Side: Socials */
-        .nav-left {
-            justify-self: start;
-            display: flex;
-            gap: 20px;
-        }
-
+        .nav-left { justify-self: start; display: flex; gap: 20px; }
         .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.4rem;
-            transition: 0.3s;
+            color: var(--text-secondary); font-size: 1.4rem; transition: 0.3s;
         }
         .social-links a:hover { color: var(--accent); transform: scale(1.1); }
 
-        /* Center: Logo */
         .logo {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 1.2rem;
-            justify-self: center;
+            font-family: 'JetBrains Mono', monospace; font-weight: 700;
+            color: var(--accent); font-size: 1.2rem; justify-self: center;
             text-align: center;
         }
 
-        /* Right Side: Toggle */
-        .nav-right {
-            justify-self: end;
-        }
+        .nav-right { justify-self: end; }
 
-        /* Theme Toggle (Oval/Pill Shape) */
         .theme-toggle {
-            background: transparent;
-            border: 1px solid var(--text-secondary);
-            color: var(--text-primary);
-            padding: 8px 25px; /* Wide padding for oval shape */
-            border-radius: 50px; /* Fully rounded pill */
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: transparent; border: 1px solid var(--text-secondary);
+            color: var(--text-primary); padding: 8px 25px; border-radius: 50px;
+            cursor: pointer; transition: 0.3s; font-size: 1.1rem;
+            display: flex; align-items: center; justify-content: center;
         }
         .theme-toggle:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--accent); color: var(--accent);
             background: var(--card-hover);
         }
 
@@ -252,10 +228,10 @@
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 50px; }
         .project-card {
             background: var(--glass-bg); border: 1px solid var(--glass-border);
-            border-radius: 16px; overflow: hidden; transition: 0.4s; height: 100%;
+            border-radius: 16px; overflow: hidden; transition: 0.4s; height: 100%; display: flex; flex-direction: column;
         }
         .project-card:hover { transform: translateY(-10px); border-color: var(--accent); }
-        .project-content { padding: 30px; }
+        .project-content { padding: 30px; flex-grow: 1; }
         .project-content h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--text-primary); }
         .project-content p { color: var(--text-secondary); margin-bottom: 20px; font-size: 0.95rem; }
         .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
@@ -264,12 +240,99 @@
             padding: 5px 12px; border-radius: 4px; font-size: 0.8rem;
             font-family: 'JetBrains Mono', monospace;
         }
-        .project-links {
-            padding: 20px 30px; border-top: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between;
+        /* Removed .project-links styles as button is removed */
+
+        /* --- CERTIFICATIONS SECTION --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
-        .project-links a { text-decoration: none; color: var(--text-primary); font-size: 0.9rem; transition: 0.3s; }
-        .project-links a:hover { color: var(--accent); }
+
+        .cert-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cert-header {
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+        }
+
+        .cert-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .cert-card:hover .cert-img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .cert-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cert-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .cert-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        .cert-org {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .cert-link {
+            margin-top: auto;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            padding: 10px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .cert-link:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
 
         /* --- CONTACT --- */
         .contact-section {
@@ -344,7 +407,7 @@
             </div>
 
             <h1 data-aos="zoom-in" data-aos-delay="200">Nisar Ali</h1>
-            <div class="subtitle" data-aos="fade-up" data-aos-delay="300">Tech Explorer | Solutions Engineer</div>
+            <div class="subtitle" data-aos="fade-up" data-aos-delay="300">Technical Project Manager | Solutions Engineer</div>
             
             <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
                 <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
@@ -443,8 +506,17 @@
                             <span class="tag">FinTech</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="120">
+                    <div class="project-content">
+                        <h3><i class="fas fa-filter" style="color:var(--accent)"></i> Smart Gmail Categorizer</h3>
+                        <p>Intelligent automation workflow built on n8n. Auto-detects and sorts incoming emails into custom labels (Sponsors, Courses, Discounts, Others) directly in Gmail, keeping the inbox organized.</p>
+                        <div class="tech-tags">
+                            <span class="tag">n8n</span>
+                            <span class="tag">Gmail Automation</span>
+                            <span class="tag">Workflow</span>
+                        </div>
                     </div>
                 </div>
 
@@ -458,9 +530,6 @@
                             <span class="tag">Automation</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
@@ -472,9 +541,6 @@
                             <span class="tag">Chart.js</span>
                             <span class="tag">Web App</span>
                         </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -488,9 +554,6 @@
                             <span class="tag">Chatbot</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
@@ -502,9 +565,6 @@
                             <span class="tag">Math Models</span>
                             <span class="tag">Crypto</span>
                         </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -518,9 +578,6 @@
                             <span class="tag">No-Code</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400">
@@ -533,9 +590,6 @@
                             <span class="tag">Integration</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="450">
@@ -546,9 +600,6 @@
                             <span class="tag">Python</span>
                             <span class="tag">Data Mining</span>
                         </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/mrnisarali110" target="_blank">View Code <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -561,13 +612,110 @@
                             <span class="tag">UI/UX</span>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="#">View Prototype <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;" data-aos="fade-up">
+                <a href="https://github.com/mrnisarali110" target="_blank" class="btn btn-primary" style="display: inline-flex; width: auto; padding: 12px 40px;">
+                    <i class="fab fa-github"></i> View All Repositories
+                </a>
+            </div>
+
+        </section>
+
+        <section id="certifications" style="padding-bottom: 80px;">
+            <div class="section-title"><span>Certifications</span></div>
+            
+            <div class="cert-grid">
+                
+                <div class="cert-card" data-aos="fade-up">
+                    <div class="cert-header">
+                        <img src="https://certificates.simplicdn.net/share/9691231_9462752_1767838521391.png" alt="Business Analysis Basics" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-date">JAN 2026</div>
+                        <div class="cert-title">Business Analysis Basics</div>
+                        <div class="cert-org">Simplilearn</div>
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzc5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvOTY5MTIzMV85NDYyNzUyXzE3Njc4Mzg1MjEzOTEucG5nIiwidXNlcm5hbWUiOiJOaXNhciBBbGkifQ%3D%3D" target="_blank" class="cert-link">
+                            Verify Credential <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="cert-header">
+                        <img src="https://certificates.simplicdn.net/share/9691004_9462752_1767821010873.png" alt="n8n Automation" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-date">JAN 2026</div>
+                        <div class="cert-title">n8n: No Code AI Agent Builder</div>
+                        <div class="cert-org">Simplilearn</div>
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0OTUxIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvOTY5MTAwNF85NDYyNzUyXzE3Njc4MjEwMTA4NzMucG5nIiwidXNlcm5hbWUiOiJOaXNhciBBbGkifQ%3D%3D" target="_blank" class="cert-link">
+                            Verify Credential <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="cert-header">
+                        <img src="https://certificates.simplicdn.net/share/9121140_94627521759868542691.png" alt="Agile Scrum Master" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-date">OCT 2025</div>
+                        <div class="cert-title">Agile Scrum Master Basics</div>
+                        <div class="cert-org">Simplilearn</div>
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiI0NDgzIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvOTEyMTE0MF85NDYyNzUyMTc1OTg2ODU0MjY5MS5wbmciLCJ1c2VybmFtZSI6Ik5pc2FyIEFsaSJ9" target="_blank" class="cert-link">
+                            Verify Credential <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="cert-header">
+                        <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~AVO9KZAYW7XU/CERTIFICATE_LANDING_PAGE~AVO9KZAYW7XU.jpeg" alt="Project Management ClickUp" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-date">JUL 2025</div>
+                        <div class="cert-title">Intro to Project Management with ClickUp</div>
+                        <div class="cert-org">Coursera</div>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/AVO9KZAYW7XU" target="_blank" class="cert-link">
+                            Verify Credential <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="cert-header">
+                        <img src="https://certificates.simplicdn.net/share/8459688_88237261749736314937.png" alt="MERN Stack" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-date">JUN 2025</div>
+                        <div class="cert-title">Fundamentals of MERN Stack</div>
+                        <div class="cert-org">Simplilearn</div>
+                        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIzMzM3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODQ1OTY4OF84ODIzNzI2MTc0OTczNjMxNDkzNy5wbmciLCJ1c2VybmFtZSI6Ik5pc2FyIEFsaSJ9" target="_blank" class="cert-link">
+                            Verify Credential <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cert-header">
+                        <img src="https://raw.githubusercontent.com/mrnisarali110/Portfolio-Resume/refs/heads/main/1767808022496.jfif" alt="Postman API Student Expert" class="cert-img">
+                    </div>
+                    <div class="cert-body">
+                        <div class="cert-date">JAN 2026</div>
+                        <div class="cert-title">Postman API Fundamentals Student Expert</div>
+                        <div class="cert-org">Postman</div>
+                        <a href="https://badges.parchment.com/public/assertions/jho3tfALSCuATrertmZpzg?identity__email=businesswithnisar%40gmail.com" target="_blank" class="cert-link">
+                            Verify Credential <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
 
             </div>
         </section>
+
 
         <section id="contact" class="contact-section">
             <div class="container">
@@ -617,17 +765,17 @@
             offset: 100
         });
 
-        // --- PRELOADER ---
+        // --- PRELOADER (2 seconds) ---
         const terminalBody = document.getElementById('terminal-body');
         const preloader = document.getElementById('preloader');
         
         const commands = [
-            { text: "nisar@portfolio:~$ init --role='Solutions Engineer'", class: "cmd-line", delay: 100 },
-            { text: "Loading core dependencies...", class: "output-line", delay: 600 },
-            { text: "Connecting to GitHub API... [200 OK]", class: "output-line", delay: 1200 },
-            { text: "Verifying tech stack (Python, n8n, React)...", class: "output-line", delay: 1800 },
-            { text: "Optimizing for soft skills (Problem Solving)...", class: "output-line", delay: 2400 },
-            { text: "Access Granted. Welcome, Recruiter.", class: "success", delay: 3200 }
+            { text: "nisar@portfolio:~$ init --role='Solutions Engineer'", class: "cmd-line", delay: 0 },
+            { text: "Loading core dependencies...", class: "output-line", delay: 400 },
+            { text: "Connecting to GitHub API... [200 OK]", class: "output-line", delay: 800 },
+            { text: "Verifying tech stack (Python, n8n, React)...", class: "output-line", delay: 1200 },
+            { text: "Optimizing for soft skills...", class: "output-line", delay: 1500 },
+            { text: "Access Granted. Welcome, Recruiter.", class: "success", delay: 1900 }
         ];
 
         let i = 0;
@@ -640,7 +788,7 @@
                 terminalBody.appendChild(line);
                 terminalBody.scrollTop = terminalBody.scrollHeight;
 
-                const nextDelay = (i + 1 < commands.length) ? (commands[i+1].delay - commands[i].delay) : 1000;
+                const nextDelay = (i + 1 < commands.length) ? (commands[i+1].delay - commands[i].delay) : 500;
                 i++;
                 setTimeout(addLine, nextDelay);
             } else {
@@ -648,24 +796,24 @@
                     preloader.classList.add('fade-out');
                     document.body.classList.add('loaded');
                     setTimeout(() => AOS.refresh(), 500); 
-                }, 800);
+                }, 200);
             }
         }
         setTimeout(addLine, 100);
 
-        // --- THEME SWITCHER LOGIC ---
+        // --- THEME SWITCHER LOGIC (Default Light) ---
         const toggleBtn = document.getElementById('theme-toggle');
         const html = document.documentElement;
         const icon = toggleBtn.querySelector('i');
 
-        // Check for saved preference
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        // Check for saved preference OR default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
         html.setAttribute('data-theme', savedTheme);
         updateIcon(savedTheme);
 
         toggleBtn.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light'; // Logic switched to toggle correctly
             
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
@@ -674,9 +822,11 @@
 
         function updateIcon(theme) {
             if (theme === 'light') {
+                // If light mode is active, show Moon icon (to switch to dark)
                 icon.classList.remove('fa-sun');
                 icon.classList.add('fa-moon');
             } else {
+                // If dark mode is active, show Sun icon (to switch to light)
                 icon.classList.remove('fa-moon');
                 icon.classList.add('fa-sun');
             }
